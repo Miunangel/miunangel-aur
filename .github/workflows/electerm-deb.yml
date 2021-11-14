@@ -52,7 +52,7 @@ jobs:
         run: | 
           echo "PKG_FILE_SUM=$(curl -sL ${{ env.PKG_FILE_URL }} | sha512sum | cut -f 1 -d ' ' | head -n 1)" >> $GITHUB_ENV
       - name: Compile & Install pacman
-        if: env.LATEST_VERSION == 0
+        if: env.LATEST_VER == 0
         shell: bash {0}
         run: |
           sudo apt update
